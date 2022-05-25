@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-use Stichoza\GoogleTranslate\GoogleTranslate;
 
-Route::get('/', function () {
-    $tr = new GoogleTranslate('fr'); // Translates into French
-    return $tr->translate('Hello World!');
+
+Route::get('translate', function () {
+    $lang = new GoogleTranslate('en'); // Translates into French
+    return $lang->setSource('en')->setTarget('fr')->translate('Goodbye');
     
 });
 
