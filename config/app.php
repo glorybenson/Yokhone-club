@@ -234,7 +234,7 @@ return [
 
     'languages' => [
         'en' => 'English',
-        'fr' => 'French',
+        'fr' => 'Français',
     ],
 
 ];
