@@ -17,7 +17,7 @@ use Stichoza\GoogleTranslate\GoogleTranslate;
 
 Route::get('/', function () {
     $tr = new GoogleTranslate('fr'); // Translates into French
-    return $tr->translate('Users');
+    return $tr->translate('Hello World!');
     
 });
 
