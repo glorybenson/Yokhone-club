@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Stichoza\GoogleTranslate\GoogleTranslate;
+
+//use Stichoza\GoogleTranslate\GoogleTranslate;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,11 @@ use Stichoza\GoogleTranslate\GoogleTranslate;
 */
 
 
-Route::get('translate', function () {
+/*Route::get('translate', function () {
     $lang = new GoogleTranslate('en'); // Translates into French
     return $lang->setSource('en')->setTarget('fr')->translate('Goodbye');
     
-});
+});*/
 
 Route::get('/', function () {
     return redirect()->route('login');
