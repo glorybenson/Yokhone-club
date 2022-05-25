@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Stichoza\GoogleTranslate\GoogleTranslate;
+
+Route::get('/', function () {
+    $tr = new GoogleTranslate('fr'); // Translates into French
+    return $tr->translate('Hello World!');
+    
+});
 
 Route::get('/', function () {
     return redirect()->route('login');
