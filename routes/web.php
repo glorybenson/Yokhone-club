@@ -42,7 +42,7 @@ Route::group(['prefix' => '{language}'], function () {
     });
 
 
-    Auth::routes();
+    //Auth::routes();
 
     Route::group(['middleware' => ['auth']], function () {
 
