@@ -32,14 +32,16 @@ use Illuminate\Support\Facades\Route;
     }
 });*/
 
-Route::get('/', function () {
-    return ()->route('login');
-    return view('welcome');
-    });
+
 
 Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function () {
+
+    Route::get('/', function () {
+        return route('login');
+        return view('welcome');
+        });
 
 
     //Auth::routes();
