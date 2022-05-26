@@ -23,6 +23,11 @@ use Illuminate\Support\Facades\Route;
     
 });*/
 
+Route::get('/test', function () {
+    App::setLocale('fr');
+    dd(App::getLocale());
+});
+
 Route::get('/', function () {
     return redirect()->route('login');
     return view('welcome');
