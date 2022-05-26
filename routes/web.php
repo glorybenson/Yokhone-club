@@ -25,7 +25,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/test', function () {
     App::setLocale('fr');
-    dd(App::getLocale());
+
+    if(App::isLocale('fr')) {
+        dd(App::getLocale());
+
+    }
 });
 
 Route::get('/', function () {
