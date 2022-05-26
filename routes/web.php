@@ -34,12 +34,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::redirect('/', '/en');
+.//Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function () {
 
     Route::get('/', function () {
-        return route('login');
+        return redirect()->route('login');
         return view('welcome');
         });
 
