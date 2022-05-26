@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-.//Route::redirect('/', '/en');
+//Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function () {
 
