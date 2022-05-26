@@ -23,32 +23,15 @@ use Illuminate\Support\Facades\Route;
     
 });*/
 
-/*Route::get('/test', function () {
-    App::setLocale('fr');
-
-    if(App::isLocale('fr')) {
-        dd(App::getLocale());
-
-    }
-});*/
+Route::get('/', function () {
+    return redirect()->route('login');
+    return view('welcome');
+});
 
 
+Auth::routes();
 
-//Route::redirect('/', '/en');
-
-
-
-    Route::get('/', function () {
-        return redirect()->route('login');
-        return view('welcome');
-        });
-
-//Route::group(['prefix' => '{language}'], function () {
-
-
-    //Auth::routes();
-
-    Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth']], function () {
 
     Route::group(['middleware' => ['user']], function () {
         //User Routes
@@ -124,5 +107,3 @@ use Illuminate\Support\Facades\Route;
     Route::match(['post'], '/delete-notification', [App\Http\Controllers\HomeController::class, 'delete_notification'])->name('delete.notification');
     Route::match(['get'], '/delete-all-notification', [App\Http\Controllers\HomeController::class, 'delete_all_notification'])->name('delete.all.notification');
 });
-//});
-
