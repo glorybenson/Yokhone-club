@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::redirect('/', '/en');
+//Route::redirect('/', '/en');
 
 
 
@@ -43,7 +43,7 @@ Route::redirect('/', '/en');
         return view('welcome');
         });
 
-Route::group(['prefix' => '{language}'], function () {
+//Route::group(['prefix' => '{language}'], function () {
 
 
     //Auth::routes();
@@ -124,5 +124,5 @@ Route::group(['prefix' => '{language}'], function () {
     Route::match(['post'], '/delete-notification', [App\Http\Controllers\HomeController::class, 'delete_notification'])->name('delete.notification');
     Route::match(['get'], '/delete-all-notification', [App\Http\Controllers\HomeController::class, 'delete_all_notification'])->name('delete.all.notification');
 });
-});
+//});
 
