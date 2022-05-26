@@ -29,7 +29,7 @@ Route::get('/', function () {
 });
 
 
-Auth::routes();
+//Auth::routes();
 
 Route::redirect('/', '/en');
 
