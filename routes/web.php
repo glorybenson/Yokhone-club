@@ -31,6 +31,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::redirect('/', '/en');
+
+Route::group(['prefix' => '{language}'], function () {
+
 Route::group(['middleware' => ['auth']], function () {
 
     Route::group(['middleware' => ['user']], function () {
@@ -106,4 +110,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::match(['get', 'post'], '/change-password', [App\Http\Controllers\HomeController::class, 'change_password'])->name('change.password');
     Route::match(['post'], '/delete-notification', [App\Http\Controllers\HomeController::class, 'delete_notification'])->name('delete.notification');
     Route::match(['get'], '/delete-all-notification', [App\Http\Controllers\HomeController::class, 'delete_all_notification'])->name('delete.all.notification');
+});
 });
